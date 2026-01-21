@@ -53,11 +53,11 @@ fn main() -> Result<()> {
         }
     }
 
-    let template_owned_content: String; // Para almacenar contenido leído de disco
+    let template_owned_content: String;
 
     let template_content: &str = match template_name.as_str() {
         "base" => include_str!("templates/base.html"),
-        // Si no es "base", buscamos un archivo .html con ese nombre
+
         _ => {
             let custom_path =
                 PathBuf::from("src/templates").join(format!("{}.html", template_name));
